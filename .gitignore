@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pth
+checkpoints/
+dataset/processed/
+dataset/raw/
+.vscode/
+.idea/
+.env
