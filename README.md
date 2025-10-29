@@ -75,7 +75,7 @@ data/
  Запуск проекта (Arch Linux)
 # 1. Клонируем репозиторий
 ```
-git clone https://github.com/yourname/pest-detection-ai
+git clone git@github.com:limonORG02/pest-detection-ai.git
 cd pest-detection-ai
 ```
 # 2. Делаем скрипт исполняемым
