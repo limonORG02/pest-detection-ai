@@ -78,27 +78,67 @@ data/
 git clone git@github.com:limonORG02/pest-detection-ai.git
 cd pest-detection-ai
 ```
-# 2. Делаем скрипт исполняемым
+
+## Установка окружения
+
+Перед запуском убедись, что у тебя установлен Python **3.9+** и `pip`.
+
+###Создай виртуальное окружение (рекомендуется)
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux / macOS
+venv\Scripts\activate     # Windows
 ```
-chmod +x run.sh
+### Установи все зависимости
 ```
-# 3. Запускаем установку и обучение
+pip install -r requirements.txt
 ```
-./run.sh
+Если файла requirements.txt нет, можешь установить основные пакеты вручную:
 ```
-Пример предсказания
-```
-python src/predict.py data/pests/test_leaf.jpg
+pip install tensorflow opencv-python numpy matplotlib
 ```
 
-Вывод:
+### TensorFlow может быть установлен без поддержки GPU.
+Если у тебя есть видеокарта NVIDIA и драйвера CUDA — можно поставить версию с GPU:
+```
+pip install tensorflow[and-cuda]
+```
+## Обучение модели
+```
+python src/train_model.py
+```
+## Оценка точности
+```
+python src/evaluate.py
+```
+## Пример тестирования модели
 
-Вредитель обнаружен!
+После обучения можно протестировать модель на отдельных изображениях.
 
-
+### Вариант 1 — указать путь к файлу вручную:
+```bash
+python src/predict.py data/test/pests/1.jpg
+```
 или
+```
+python src/predict.py data/test/no_pests/3.jpg
+```
+Вариант 2 — запустить без аргументов (скрипт выберет случайное изображение):
+```
+python src/predict.py
+```
 
-Вредителей не найдено.
+## Примеры путей:
+
+Linux: python src/predict.py data/test/no_pests/1.jpg
+
+Windows: python src\predict.py data\test\no_pests\1.jpg
+
+Модель выведет результат:
+
+🐛 Вредитель обнаружен! — если на фото есть вредитель
+
+🌿 Вредителей не найдено. — если всё чисто
 
  Оценка точности
 
@@ -109,7 +149,7 @@ python src/evaluate.py
 
 Пример вывода:
 ```
- Test Accuracy: 93.47%
+ Test Accuracy: 99.47%
 ```
 ### Как улучшить проект
 

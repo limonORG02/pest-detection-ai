@@ -1,9 +1,64 @@
+# Python cache и системные файлы
+# Python cache и системные файлы
 __pycache__/
-*.pyc
-*.pth
-checkpoints/
-dataset/processed/
-dataset/raw/
+*.py[cod]
+*.so
+*.egg-info/
+*.pyo
+*.pyd
+*.spec
+*.log
+
+# Виртуальные окружения
+venv/
+env/
+.venv/
+ENV/
+*.env
+*.venv
+
+# IDE и редакторы
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+
+# Настройки окружения
 .env
+*.ini
+*.cfg
+*.toml
+
+# Директории с моделями и обучением
+checkpoints/
+models/
+logs/
+runs/
+tmp/
+output/
+
+# Dataset и промежуточные данные
+dataset/raw/
+dataset/processed/
+data/*/
+!data/train/
+!data/test/
+!data/val/
+!data/labels.txt
+
+#  Исключить venv, если случайно попал в data/
+data/**/venv/
+
+#  Системные файлы Linux/macOS
+.DS_Store
+Thumbs.db
+.cache/
+*.swp
+*.swo
+
+#  Node или JS зависимости (если где-то будут)
+node_modules/
+
+#  Jupyter и временные
+*.ipynb_checkpoints/
+
