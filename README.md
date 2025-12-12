@@ -83,7 +83,7 @@ cd pest-detection-ai
 
 Перед запуском убедись, что у тебя установлен Python **3.9+** и `pip`.
 
-###Создай виртуальное окружение (рекомендуется)
+### Создай виртуальное окружение (рекомендуется)
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux / macOS
